@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      //Exercício 1
+      let tagH1 = document.createElement('h1');
+      tagH1.innerHTML = 'Exercício 5.2 - JavaScript';
+      document.body.appendChild(tagH1);
+
+      //Exercício 2
+      let div = document.createElement('div');
+      div.className = 'main-content';
+      document.body.appendChild(div);
+
+      // Exercício 3
+      let div2 = document.createElement('div');
+      div2.className = 'center-content';
+      document.body.appendChild(div2);
+
+      //Exercício 4
+      let divPai = document.getElementsByClassName('center-content')[0];
+      let paragrafo = document.createElement('p');
+      paragrafo.innerHTML = 'Estou aprendendo muito na Trybe';
+      divPai.appendChild(paragrafo);
+
+      //Exercício 5
+      let divPai2 = document.getElementsByClassName('main-content')[0];
+      let div3 = document.createElement('div');
+      div3.className = 'left-content';
+      divPai2.appendChild(div3);
+
+      //Exercício 6
+      let div4 = document.createElement('div');
+      div4.className = 'right-content'
+      divPai2.appendChild(div4);
+
+      //Exercício 7
+      let img = document.createElement('img');
+      img.src = 'https://picsum.photos/200';
+      img.className = 'small-image';
+      div3.appendChild(img);
+
+      //Exercício 8
+      let numeros = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez'];
+      let lista = document.createElement('ul');
+      lista.className = 'lista-numeros';
+      div4.appendChild(lista);
+      for (let index = 0; index < numeros.length; index+= 1) {
+        let liNumeros = document.createElement('li');
+        liNumeros.innerHTML = numeros[index]
+
+        lista.appendChild(liNumeros);
+      };
+
+      //Exercício 9
+      for (let index2 = 0; index2 < 3; index2 += 1) {
+        let tagH3 = document.createElement('h3');
+        //Parte_II - Exercício 2
+        tagH3.className = 'description'
+        div.appendChild(tagH3);
+      };
+
+      //Parte_II
+      //Exercício 1
+      tagH1.className = 'title';
+
+      //Exercício 3
+      let criancaTriste = document.querySelector('.left-content');
+      div.removeChild(criancaTriste);
+
+      //Exercício 4
+      div4.style.marginRight = 'auto';
+
+      //Exercício 5
+      div2.style.backgroundColor = 'green'
+
+      //Exercício 6
+      lista.lastChild.remove();
+      lista.lastChild.remove();
+
+
+    </script>
+  </body>
+</html>

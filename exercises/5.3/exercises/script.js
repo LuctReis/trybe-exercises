@@ -77,3 +77,15 @@ function holidayColor() {
 };
 
 holidayColor();
+
+//Exercicio4
+
+function sextou(buttonName) {
+  const getButtonFriday = document.createElement('button');
+  getButtonFriday.innerHTML = buttonName;
+  getButtonFriday.id = 'btn-friday';
+  const divButton = document.getElementsByClassName('buttons-container')[0];
+  divButton.appendChild(getButtonFriday);
+}
+
+sextou('Sexta-feira');
